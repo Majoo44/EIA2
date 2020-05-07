@@ -35,6 +35,23 @@ h3 {
     margin: 0em;
 }
 
+legend {
+    color: rgb(15, 175, 127);
+    font-family: fantasy;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: lighter;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 1em;
+}
+
+fieldset {
+    margin: 2em;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 p  {
     text-align: center;
     margin-bottom: 0.25em;
@@ -52,6 +69,14 @@ button {
     border: 0px;
     padding: 0.5em;
     margin: 1em;
+}
+
+input {    
+    background-color: rgb(15, 175, 127);
+}
+
+select,option  {
+    background-color: rgb(15, 175, 127);
 }
 
 #Footer {
