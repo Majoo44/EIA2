@@ -1,0 +1,62 @@
+/*
+Aufgabe: Aufgabe 3
+Name: Mario Eigeldinger
+Matrikel: 261167
+Datum: 09.05.2020
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
+*/
+
+html {
+    background-color: lightgrey;
+}
+h1 {
+    font-size: 2em;
+    color: rgb(15, 175, 127);
+    text-align: center;
+    font-family: fantasy;
+    text-transform: uppercase;
+    margin-bottom: 0.25em;
+}
+
+h4 {
+    color: darkblue;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 0em;
+    margin-block-end: 2em;
+}
+
+h3 {
+    color: darkblue;
+    text-align: center;
+    font-weight: lighter;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 0em;
+    margin: 0em;
+}
+
+p  {
+    text-align: center;
+    margin-bottom: 0.25em;
+    margin-left: 10em;
+    margin-right: 10em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+div {
+    text-align: center;
+    }
+
+button {
+    background-color: darkslateblue;
+    border: 0px;
+    padding: 0.5em;
+    margin: 1em;
+}
+
+#Footer {
+    font-size: 1em;
+    color: white;
+    text-decoration-line: none;
+    text-align: center;
+}
