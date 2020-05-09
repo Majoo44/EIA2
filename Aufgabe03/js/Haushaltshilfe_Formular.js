@@ -4,7 +4,7 @@ Aufgabe: Aufgabe 3
 Name: Mario Eigeldinger
 Matrikel: 261167
 Datum: 09.05.2020
-Hiermit versichere ich, dass ich diesen Code selbst mit Johannes zusammen erstellt habe.
+Hiermit versichere ich, dass ich diesen Code selbst mit Johannes zusammen erstellt habe...
 */
 var HaushaltshilfeFormular;
 (function (HaushaltshilfeFormular) {
