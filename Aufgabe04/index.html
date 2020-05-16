@@ -1,0 +1,61 @@
+<!-- 
+Aufgabe: Aufgabe 4
+Name: Mario Eigeldinger
+Matrikel: 261167
+Datum: 16.05.2020
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe...
+-->
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aufgabe 4 - Mario Eigeldinger</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+<header>
+</header>
+
+<body>
+    <main>
+        <div>
+            <h1>
+                Ihre Haushaltshilfe 2020
+            </h1>
+        </div>
+        <h4>Wie können wir Ihnen helfen? Wählen Sie aus verschiedenen Dienstleistungen aus!</h4>
+        </div>
+
+        <div id="Einkaufen"></div>    
+        <div id="dienstleistung"></div>
+        
+        <div><fieldset id="Banktransaktionen">
+            <legend> Banktransaktionen </legend>
+            <input type="radio" name="Radiogroup2" value="radio3" id="GeldAbheben" >
+            <label for="GeldAbheben">Geld Abheben</label>
+            <input type="number" name="Menge" step="10" min="10" max="1000" placeholder="Menge" required /> €
+            <input type="radio" name="Radiogroup2" value="radio4" id="GeldEinzahlen">
+            <label for="GeldEinzahlen">Geld Einzahlen</label>
+            <input type="number" name="Menge" step="10" min="10"  max="1000"placeholder="Menge" required /> €
+            <br>
+        </fieldset>
+        </div>
+        <div>
+            <h3>Übersicht</h3>
+        </div>
+        <div id="Übersicht">
+            <span id="ÜbersichtEinkaufen"></span> <br>
+            <span id="ÜbersichtHaushaltsarbeiten"></span> <br>
+            <span id="ÜbersichtBanktransaktionen"></span> <br>
+            <span id="ÜbersichtPreis">Preis:</span>
+        </div>
+        <!--<div id="HGBild"><img src="img/Hintergrund.jpg"></div>-->
+        <script src="js/L04_Main.js"></script>
+        <script src="js/L04_Data.js"></script>
+    </main>
+    <footer>
+        <div><button id="Footer">Kontaktdaten eingeben und Bestellung abschließen</button></div>
+    </footer>
+</body>
+
+</html>
