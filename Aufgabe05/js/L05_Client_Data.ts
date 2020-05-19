@@ -114,7 +114,7 @@ namespace HaushaltshilfeData {
 
     export let data: Data = {
         Produkte: [
-            { name: "Wasser", price: 0.60, einheit: "Liter" },
+            { name: "Wasser", price: 0.19, einheit: "Liter" },
             { name: "Brot", price: 2.00, einheit: "kg" },
             { name: "Klopapier", price: 3.00, einheit: "Stück" },
         ],
