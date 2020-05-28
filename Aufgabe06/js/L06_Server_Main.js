@@ -11,7 +11,7 @@ var HaushaltshilfeData;
 (function (HaushaltshilfeData) {
     window.addEventListener("load", handleLoad);
     async function handleLoad() {
-        let response = await fetch("../data.json");
+        let response = await fetch("data.json");
         let offer = await response.text();
         let data = JSON.parse(offer);
         HaushaltshilfeData.generateContent(data);
