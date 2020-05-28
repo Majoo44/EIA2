@@ -1,9 +1,9 @@
 "use strict";
 /*
-Aufgabe: Aufgabe 5
+Aufgabe: Aufgabe 6
 Name: Mario Eigeldinger
 Matrikel: 261167
-Datum: 23.05.2020
+Datum: 30.05.2020
 Hiermit versichere ich, dass ich diesen Code zum Teil selbst, zum Teil inspiriert durch Kommilitonen auf der Pages Seite geschrieben habe...
 Durch diese Hilfe konnte ich einige Dinge verstehen.
 */
