@@ -21,13 +21,12 @@ var HaushaltshilfeData;
     }
     function handleClick() {
         // alert("Danke für deine Bestellung!");
-        let form = document.querySelector("form");
+        let form = document.querySelector('form');
         let data = new FormData(form);
         let url = "https://whatever.server/path/file";
         let query = new URLSearchParams(data);
         url += url + "?" + query.toString();
         alert(url);
-        //await fetch(url);
     }
     function handleChange(_event) {
         let order = document.querySelector("#order");
