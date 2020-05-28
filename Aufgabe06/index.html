@@ -1,0 +1,77 @@
+<!-- 
+Aufgabe: Aufgabe 5
+Name: Mario Eigeldinger
+Matrikel: 261167
+Datum: 23.05.2020
+Hiermit versichere ich, dass ich diesen Code zum Teil selbst, zum Teil inspiriert durch Kommilitonen auf der Pages Seite geschrieben habe... 
+Durch diese Hilfe konnte ich einige Dinge verstehen.
+-->
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aufgabe 5 - Mario Eigeldinger</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+<header>
+    <div>
+        <h1>
+            Ihre Haushaltshilfe 2020
+        </h1>
+    </div>
+    <h4>Wie können wir Ihnen helfen? Wählen Sie aus verschiedenen Dienstleistungen aus!</h4>
+    </div>
+</header>
+<body>
+    <main>
+ 
+
+        <form>
+            <div id="form">
+                <fieldset id="Produkte">
+                    <legend>Einkaufen</legend>
+                </fieldset>
+<hr>
+                <fieldset id="Supermarkt">
+                    <legend>Supermarkt</legend>
+                </fieldset>
+                <hr>
+                <fieldset id="Hausarbeiten">
+                    <legend>Hausarbeiten</legend>
+                </fieldset>
+                <hr>
+
+                <fieldset id="Banktransaktionen">
+                    <legend> Banktransaktionen </legend>
+                    <input type="radio" name="Geld" id="abheben" value="Abheben">
+                    <label for="abheben">Geld Abheben</label>
+                    <input type="radio" name="Geld" id="einzahlen" value="Einzahlen">
+                    <label for="einzahlen">Geld Einzahlen</label> <br>
+                    <input type="number" name="Betrag" step="10" min="0" max="1000" value="0">
+                    <br>
+                </fieldset>
+                <hr>
+
+            <fieldset id="Zahlung">
+                <legend>Zahlungsmethode</legend>
+
+            </fieldset>
+            </div>
+
+        </form>
+        <script src="js/L05_Client_Main.js"></script>
+        <script src="js/L05_Client_Data.js"></script>
+    </main>
+
+
+    <div id="bestellung">
+        <h4>Bestellungsübersicht:</h4>
+        <div id="order">
+        </div>
+        <button id="button">Bestellung abschicken</button>
+    </div>
+
+</body>
+
+</html>
