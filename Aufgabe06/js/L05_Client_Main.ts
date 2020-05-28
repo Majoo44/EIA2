@@ -9,7 +9,11 @@ Durch diese Hilfe konnte ich einige Dinge verstehen.
 namespace HaushaltshilfeData {
     window.addEventListener("load", handleLoad);
 
-    function handleLoad(): void {
+    async function handleLoad(): Promise<void> {
+        let response: Response = await fetch("data.json");
+        let offer: string = await response.text();
+        let data: Data = JSON.parse(offer);
+        
         generateContent(data);
         let form: HTMLDivElement = <HTMLDivElement> document.querySelector("#form");
         form.addEventListener("change", handleChange);

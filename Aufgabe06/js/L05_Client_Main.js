@@ -10,8 +10,11 @@ Durch diese Hilfe konnte ich einige Dinge verstehen.
 var HaushaltshilfeData;
 (function (HaushaltshilfeData) {
     window.addEventListener("load", handleLoad);
-    function handleLoad() {
-        HaushaltshilfeData.generateContent(HaushaltshilfeData.data);
+    async function handleLoad() {
+        let response = await fetch("data.json");
+        let offer = await response.text();
+        let data = JSON.parse(offer);
+        HaushaltshilfeData.generateContent(data);
         let form = document.querySelector("#form");
         form.addEventListener("change", handleChange);
         document.querySelector("#button")?.addEventListener("click", handleClick);
