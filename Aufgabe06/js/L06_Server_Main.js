@@ -21,10 +21,10 @@ var HaushaltshilfeData;
     }
     function handleClick() {
         // alert("Danke für deine Bestellung!");
-        var form = document.querySelector("form");
-        var data = new FormData(form);
+        let form = document.querySelector("form");
+        let data = new FormData(form);
         let url = "https://whatever.server/path/file";
-        let query = new URLSearchParams(form);
+        let query = new URLSearchParams(data);
         url += url + "?" + query.toString();
         alert(url);
         //await fetch(url);
