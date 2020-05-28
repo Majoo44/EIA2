@@ -24,11 +24,8 @@ namespace HaushaltshilfeData {
 
     function handleClick(): void {
        // alert("Danke für deine Bestellung!");
-
         var form = document.querySelector("form");
         var data = new FormData(<any>form);
-        var req = new XMLHttpRequest();
-        req.send(data);
 
         let url: string = "https://whatever.server/path/file";
         let query: URLSearchParams = new URLSearchParams(<any>form);
