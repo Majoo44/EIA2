@@ -1,44 +1,49 @@
-"use strict";
 /*
 Aufgabe: Aufgabe 5
 Name: Mario Eigeldinger
 Matrikel: 261167
 Datum: 23.05.2020
-Hiermit versichere ich, dass ich diesen Code zum Teil selbst, zum Teil inspiriert durch Kommilitonen auf der Pages Seite geschrieben habe...
+Hiermit versichere ich, dass ich diesen Code zum Teil selbst, zum Teil inspiriert durch Kommilitonen auf der Pages Seite geschrieben habe... 
 Durch diese Hilfe konnte ich einige Dinge verstehen.
 */
-var HaushaltshilfeData;
-(function (HaushaltshilfeData) {
-    function generateContent(_data) {
+namespace HaushaltshilfeData {
+    export function generateContent(_data: Data): void {
+
         for (let category in _data) {
-            let items = _data[category];
-            let group = null;
+            let items: Item[] = _data[category];
+            let group: HTMLElement | null = null;
             switch (category) {
                 case "Produkte":
                     group = mehrfachauswahl(items, category);
                     break;
+
                 case "Supermarkt":
                     group = einfacheauswahldropdown(items, category);
                     break;
+
                 case "Hausarbeiten":
                     group = einfacheauswahldropdown(items, category);
                     break;
+
                 case "Zahlung":
                     group = einfacheauswahlradio(items, category);
                     break;
+
                 default:
-                    break;
+                break;
             }
-            let fieldset = document.querySelector("fieldset#" + category);
+
+            let fieldset: HTMLFieldSetElement | null = document.querySelector("fieldset#" + category);
             if (fieldset && group)
                 fieldset.appendChild(group);
         }
-        function einfacheauswahldropdown(_items, _category) {
-            let group = document.createElement("div");
-            let select = document.createElement("select");
+
+        function einfacheauswahldropdown(_items: Item[], _category: string): HTMLElement | null {
+            let group: HTMLDivElement = document.createElement("div");
+            let select: HTMLSelectElement = document.createElement("select");
             select.name = _category;
             for (let item of _items) {
-                let newoption = document.createElement("option");
+                let newoption: HTMLOptionElement = document.createElement("option");
                 newoption.text = item.name;
                 select.add(newoption);
                 newoption.setAttribute("price", item.price.toFixed(2));
@@ -47,40 +52,43 @@ var HaushaltshilfeData;
             }
             return group;
         }
-        function einfacheauswahlradio(_items, _category) {
-            let group = document.createElement("div");
+
+        function einfacheauswahlradio(_items: Item[], _category: string): HTMLElement | null {
+            let group: HTMLDivElement = document.createElement("div");
             for (let item of _items) {
-                let radio = document.createElement("input");
+                let radio: HTMLInputElement = document.createElement("input");
                 radio.type = "radio";
                 radio.setAttribute("price", item.price.toFixed(2));
                 radio.setAttribute("einheit", item.einheit);
                 radio.value = item.name;
                 radio.name = _category;
                 radio.id = item.name;
-                let label = document.createElement("label");
+                let label: HTMLLabelElement = document.createElement("label");
                 label.textContent = item.name;
                 label.htmlFor = item.name;
                 group.appendChild(radio);
                 group.appendChild(label);
             }
+
             return group;
         }
-        function mehrfachauswahl(_items, _category) {
-            let group = document.createElement("div");
+
+        function mehrfachauswahl(_items: Item[], _category: string): HTMLElement | null {
+            let group: HTMLDivElement = document.createElement("div");
             for (let item of _items) {
-                let checkbox = document.createElement("input");
+                let checkbox: HTMLInputElement = document.createElement("input");
                 checkbox.type = "checkbox";
                 checkbox.setAttribute("price", item.price.toFixed(2));
                 checkbox.setAttribute("einheit", item.einheit);
                 checkbox.value = item.name;
                 checkbox.name = _category;
                 checkbox.id = item.name;
-                let label = document.createElement("label");
+                let label: HTMLLabelElement = document.createElement("label");
                 label.textContent = item.name;
                 label.htmlFor = item.name;
                 group.appendChild(checkbox);
                 group.appendChild(label);
-                let menge = document.createElement("input");
+                let menge: HTMLInputElement = document.createElement("input");
                 menge.type = "number";
                 menge.name = item.name + "Menge";
                 menge.max = "100";
@@ -92,6 +100,13 @@ var HaushaltshilfeData;
             return group;
         }
     }
-    HaushaltshilfeData.generateContent = generateContent;
-})(HaushaltshilfeData || (HaushaltshilfeData = {}));
-//# sourceMappingURL=L05_Client_Data.js.map
+    export interface Item {
+        name: string;
+        price: number;
+        einheit: string;
+    }
+
+    export interface Data {
+        [category: string]: Item[];
+    }
+}

@@ -11,7 +11,7 @@ var HaushaltshilfeData;
 (function (HaushaltshilfeData) {
     window.addEventListener("load", handleLoad);
     async function handleLoad() {
-        let response = await fetch("data.json");
+        let response = await fetch("../data.json");
         let offer = await response.text();
         let data = JSON.parse(offer);
         HaushaltshilfeData.generateContent(data);
@@ -57,4 +57,4 @@ var HaushaltshilfeData;
         order.innerHTML += "Supermarkt Vorgabe: " + supermarkt + "<br>" + "<hr>" + "<h3>Total(mit Gebühr): " + total + "€<h3><hr>";
     }
 })(HaushaltshilfeData || (HaushaltshilfeData = {}));
-//# sourceMappingURL=L05_Client_Main.js.map
+//# sourceMappingURL=L06_Server_Main.js.map
