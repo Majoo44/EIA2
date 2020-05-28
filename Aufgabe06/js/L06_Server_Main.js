@@ -20,7 +20,16 @@ var HaushaltshilfeData;
         document.querySelector("#button")?.addEventListener("click", handleClick);
     }
     function handleClick() {
-        alert("Danke für deine Bestellung!");
+        // alert("Danke für deine Bestellung!");
+        var form = document.querySelector("form");
+        var data = new FormData(form);
+        var req = new XMLHttpRequest();
+        req.send(data);
+        let url = "https://whatever.server/path/file";
+        let query = new URLSearchParams(form);
+        url += url + "?" + query.toString();
+        alert(url);
+        //await fetch(url);
     }
     function handleChange(_event) {
         let order = document.querySelector("#order");
