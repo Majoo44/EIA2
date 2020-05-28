@@ -1,0 +1,14 @@
+{
+  "name": "knobelkind",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node js/L06_Server.js"
+  },
+  "author": "Mario Eigeldinger",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^14.0.5"
+  }
+}
