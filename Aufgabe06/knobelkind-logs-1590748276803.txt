@@ -142,3 +142,37 @@
 2020-05-29T10:29:26.817620+00:00 app[web.1]: npm ERR! A complete log of this run can be found in:
 2020-05-29T10:29:26.817672+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2020-05-29T10_29_26_810Z-debug.log
 2020-05-29T10:29:26.921043+00:00 heroku[web.1]: State changed from starting to crashed
+2020-05-29T10:37:21.000000+00:00 app[api]: Build started by user mario.eigeldinger@hs-furtwangen.de
+2020-05-29T10:38:58.463541+00:00 app[api]: Deploy bd5135a6 by user mario.eigeldinger@hs-furtwangen.de
+2020-05-29T10:38:58.463541+00:00 app[api]: Release v5 created by user mario.eigeldinger@hs-furtwangen.de
+2020-05-29T10:38:58.000000+00:00 app[api]: Build succeeded
+2020-05-29T10:38:59.594166+00:00 heroku[web.1]: State changed from crashed to starting
+2020-05-29T10:39:06.159242+00:00 heroku[web.1]: Starting process with command `npm start`
+2020-05-29T10:39:10.203320+00:00 app[web.1]: 
+2020-05-29T10:39:10.203332+00:00 app[web.1]: > knobelkind@0.0.0 start /app
+2020-05-29T10:39:10.203333+00:00 app[web.1]: > node js/Aufgabe06/js/L06_Server.js
+2020-05-29T10:39:10.203333+00:00 app[web.1]: 
+2020-05-29T10:39:10.525167+00:00 app[web.1]: module.js:471
+2020-05-29T10:39:10.525186+00:00 app[web.1]:     throw err;
+2020-05-29T10:39:10.525187+00:00 app[web.1]:     ^
+2020-05-29T10:39:10.525187+00:00 app[web.1]: 
+2020-05-29T10:39:10.525189+00:00 app[web.1]: Error: Cannot find module '/app/js/Aufgabe06/js/L06_Server.js'
+2020-05-29T10:39:10.525189+00:00 app[web.1]:     at Function.Module._resolveFilename (module.js:469:15)
+2020-05-29T10:39:10.525190+00:00 app[web.1]:     at Function.Module._load (module.js:417:25)
+2020-05-29T10:39:10.525191+00:00 app[web.1]:     at Module.runMain (module.js:604:10)
+2020-05-29T10:39:10.525191+00:00 app[web.1]:     at run (bootstrap_node.js:389:7)
+2020-05-29T10:39:10.525192+00:00 app[web.1]:     at startup (bootstrap_node.js:149:9)
+2020-05-29T10:39:10.525214+00:00 app[web.1]:     at bootstrap_node.js:504:3
+2020-05-29T10:39:10.538408+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2020-05-29T10:39:10.542583+00:00 app[web.1]: npm ERR! errno 1
+2020-05-29T10:39:10.542585+00:00 app[web.1]: npm ERR! knobelkind@0.0.0 start: `node js/Aufgabe06/js/L06_Server.js`
+2020-05-29T10:39:10.542585+00:00 app[web.1]: npm ERR! Exit status 1
+2020-05-29T10:39:10.542586+00:00 app[web.1]: npm ERR! 
+2020-05-29T10:39:10.542587+00:00 app[web.1]: npm ERR! Failed at the knobelkind@0.0.0 start script.
+2020-05-29T10:39:10.542588+00:00 app[web.1]: npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+2020-05-29T10:39:10.557556+00:00 app[web.1]: npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+2020-05-29T10:39:10.559559+00:00 app[web.1]: 
+2020-05-29T10:39:10.559795+00:00 app[web.1]: npm ERR! A complete log of this run can be found in:
+2020-05-29T10:39:10.560012+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2020-05-29T10_39_10_544Z-debug.log
+2020-05-29T10:39:10.642446+00:00 heroku[web.1]: Process exited with status 1
+2020-05-29T10:39:10.687047+00:00 heroku[web.1]: State changed from starting to crashed
