@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node js/L06_Server.js"
+    "start": "node js/Aufgabe06/js/L06_Server.js"
   },
   "author": "Mario Eigeldinger",
   "license": "ISC",
