@@ -1,14 +1,15 @@
 {
-  "name": "knobelkind",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "node js/Aufgabe06/js/L06_Server.js"
-  },
-  "author": "Mario Eigeldinger",
-  "license": "ISC",
-  "dependencies": {
-    "@types/node": "^14.0.5"
-  }
+	"name" : "knobelkind",
+	"version" : "0.0.0",
+	"description" : "",
+	"author" : "Mario Eigeldinger",
+	"main" : "L06_Server_Main.js",
+	"scripts" : {
+		"start" : "node js/Aufgabe06/js/L06_Server.js"
+	},
+	"engines" : {
+		"node" : "6.11.1"
+	},
+	"dependencies" : {
+	}
 }
