@@ -5,7 +5,7 @@
 	"author" : "Mario Eigeldinger",
 	"main" : "L06_Server_Main.js",
 	"scripts" : {
-		"start" : "node js/Aufgabe06/js/L06_Server.js"
+		"start" : "node js/L06_Server.js"
 	},
 	"engines" : {
 		"node" : "6.11.1"
