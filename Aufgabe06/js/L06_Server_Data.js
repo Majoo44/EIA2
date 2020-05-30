@@ -7,8 +7,8 @@ Datum: 30.05.2020
 Hiermit versichere ich, dass ich diesen Code zum Teil selbst, zum Teil inspiriert durch Kommilitonen auf der Pages Seite geschrieben habe...
 Durch diese Hilfe konnte ich einige Dinge verstehen.
 */
-var HaushaltshilfeData;
-(function (HaushaltshilfeData) {
+var HaushaltshilfeServer;
+(function (HaushaltshilfeServer) {
     function generateContent(_data) {
         for (let category in _data) {
             let items = _data[category];
@@ -92,6 +92,6 @@ var HaushaltshilfeData;
             return group;
         }
     }
-    HaushaltshilfeData.generateContent = generateContent;
-})(HaushaltshilfeData || (HaushaltshilfeData = {}));
+    HaushaltshilfeServer.generateContent = generateContent;
+})(HaushaltshilfeServer || (HaushaltshilfeServer = {}));
 //# sourceMappingURL=L06_Server_Data.js.map
