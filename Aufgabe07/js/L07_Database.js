@@ -10,8 +10,8 @@ Durch diese Hilfe konnte ich einige Dinge verstehen.
 Object.defineProperty(exports, "__esModule", { value: true });
 const Http = require("http");
 const Url = require("url");
-var L06_Server;
-(function (L06_Server) {
+var HaushaltshilfeDatabase;
+(function (HaushaltshilfeDatabase) {
     let server = Http.createServer();
     console.log(server);
     let port = process.env.PORT;
@@ -34,5 +34,5 @@ var L06_Server;
         _response.write("This is my response");
         _response.end();
     }
-})(L06_Server = exports.L06_Server || (exports.L06_Server = {}));
+})(HaushaltshilfeDatabase = exports.HaushaltshilfeDatabase || (exports.HaushaltshilfeDatabase = {}));
 //# sourceMappingURL=L07_Database.js.map

@@ -10,7 +10,7 @@ Durch diese Hilfe konnte ich einige Dinge verstehen.
 import * as Http from "http";
 import * as Url from "url";
 
-export namespace L06_Server {
+export namespace HaushaltshilfeDatabase {
     let server: Http.Server = Http.createServer();
     console.log(server);
 
