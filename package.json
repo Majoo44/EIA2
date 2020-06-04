@@ -1,15 +1,17 @@
 {
-	"name" : "knobelkind",
-	"version" : "0.0.0",
-	"description" : "",
-	"author" : "Mario Eigeldinger",
-	"main" : "L06_Server_Main.js",
-	"scripts" : {
-		"start" : "node Aufgabe06/js/L06_Server.js"
+	"name": "knobelkind",
+	"version": "0.0.0",
+	"description": "",
+	"author": "Mario Eigeldinger",
+	"main": "L06_Server_Main.js",
+	"scripts": {
+		"start": "node Aufgabe06/js/L06_Server.js"
 	},
-	"engines" : {
-		"node" : "6.11.1"
+	"engines": {
+		"node": "6.11.1"
 	},
-	"dependencies" : {
+	"dependencies": {
+		"@types/mongodb": "^3.5.20",
+		"mongodb": "^3.5.8"
 	}
 }
