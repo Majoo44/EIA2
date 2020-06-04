@@ -9,10 +9,17 @@ Durch diese Hilfe konnte ich einige Dinge verstehen.
 
 import * as Http from "http";
 import * as Url from "url";
+import * as Mongo from "mongodb";
 
 export namespace HaushaltshilfeDatabase {
     let server: Http.Server = Http.createServer();
     console.log(server);
+
+    let mongoClient: Mongo.MongoClient = new Mongo.MongoClient("localhost");
+    mongoClient.connect(); /*Await hinzufügen*/
+
+    let orders: Mongo.Collection = mongoClient.db("Test").collection("Orders");
+    //orders.insert({...});
 
     let port: number | string | undefined  = process.env.PORT;
     if (port == undefined)
@@ -42,4 +49,6 @@ export namespace HaushaltshilfeDatabase {
         _response.write("This is my response");
         _response.end();
     }
+    
+
 }
