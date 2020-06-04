@@ -1,0 +1,80 @@
+{
+    "Produkte": [
+        {
+            "name": "Wasser",
+            "price": 0.19,
+            "einheit": "Liter"
+        },
+        {
+            "name": "Brot",
+            "price": 2.00,
+            "einheit": "kg"
+        },
+        {
+            "name": "Klopapier",
+            "price": 3.00,
+            "einheit": "Stück"
+        }
+    ],
+    "Supermarkt": [
+        {
+            "name": "Keine Vorgabe",
+            "price": 0,
+            "einheit": ""
+        },
+        {
+            "name": "Edeka",
+            "price": 0,
+            "einheit": ""
+        },
+        {
+            "name": "Real einmal hin alles drin",
+            "price": 0,
+            "einheit": ""
+        },
+        {
+            "name": "Rewe",
+            "price": 0,
+            "einheit": ""
+        }
+    ],
+    "Hausarbeiten": [
+        {
+            "name": "Keine",
+            "price": 0.00,
+            "einheit": ""
+        },
+        {
+            "name": "Boden wischen",
+            "price": 10.00,
+            "einheit": ""
+        },
+        {
+            "name": "Rasen Mähen",
+            "price": 30.00,
+            "einheit": ""
+        },
+        {
+            "name": "Fenster putzen",
+            "price": 20.00,
+            "einheit": ""
+        }
+    ],
+    "Zahlung": [
+        {
+            "name": "Bar",
+            "price": 0,
+            "einheit": ""
+        },
+        {
+            "name": "Paypal",
+            "price": 0,
+            "einheit": ""
+        },
+        {
+            "name": "Überweisung",
+            "price": 0,
+            "einheit": ""
+        }
+    ]
+}

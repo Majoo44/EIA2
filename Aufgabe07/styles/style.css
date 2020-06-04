@@ -1,0 +1,122 @@
+/*
+Aufgabe: Aufgabe 7
+Name: Mario Eigeldinger
+Matrikel: 261167
+Datum: 06.06.2020
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe...
+*/
+html {
+    letter-spacing: -0.035em;
+}
+/*#img {
+    background-image: url(https://images.unsplash.com/photo-1498354136128-58f790194fa7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+    background-size: 100% 100%;
+    opacity: 0.5;
+    }
+*/
+body {
+    display: grid;
+    grid-template-columns: 70% auto;
+    grid-template-rows: auto auto;
+    }
+    
+    #form {
+        border: solid rgb(15, 175, 127);
+        margin: 2em;
+    }
+    #order {    
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    #bestellung {
+        border: solid rgb(15, 175, 127);
+        margin: 2em;
+    }
+    
+    header {
+        grid-column: span 2;
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 2em;
+        color: rgb(15, 175, 127);
+        text-align: center;
+        font-family: fantasy;
+        text-transform: uppercase;
+        margin-bottom: 0.25em;
+    }
+
+    h3 {
+        color: darkblue;
+        text-align: center;
+        font-weight: lighter;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        padding: 0em;
+        margin: 0em;
+    }
+
+    h4 {
+        color: darkblue;
+        text-align: center;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        padding: 0em;
+    }
+    
+    #form {
+        position: relative;
+    }
+        
+    #button  {
+        position: relative;
+        background-color: darkslateblue;
+        border: 0px;
+        padding: 1em;
+        margin: 1em;
+        color: white;
+    }
+
+    legend {
+    color: rgb(15, 175, 127);
+    font-family: fantasy;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: lighter;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 1em;
+    }
+
+    fieldset {
+    padding: 0.5em;
+    margin: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border: transparent;
+    }
+
+    p  {
+    text-align: center;
+    margin-bottom: 0.25em;
+    margin-left: 10em;
+    margin-right: 10em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    div {
+    text-align: center;
+    }
+
+    label{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    input, select {   
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+        background-color: rgb(15, 175, 127);
+        border: none;
+        color: white;
+        padding: 0.5em;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+        text-align: center;
+        }
