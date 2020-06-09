@@ -9,3 +9,7 @@ let canvas: HTMLCanvasElement = <HTMLCanvasElement>document.querySelector("canva
 let crc2: CanvasRenderingContext2D = <CanvasRenderingContext2D>canvas.getContext("2d");
 crc2.fillStyle = "#FFFF00";
 crc2.fillRect(0, 0, crc2.canvas.width, crc2.canvas.height);
+
+crc2.beginPath();
+crc2.arc(20, 20, 20, 0.5, 1.2 * Math.PI, true);
+crc2.stroke();
