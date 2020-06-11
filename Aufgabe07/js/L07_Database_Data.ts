@@ -72,7 +72,10 @@ namespace HaushaltshilfeDatabase {
 
             return group;
         }
+       
+        let horizon : number=1; 
 
+        
         function mehrfachauswahl(_items: Item[], _category: string): HTMLElement | null {
             let group: HTMLDivElement = document.createElement("div");
             for (let item of _items) {
