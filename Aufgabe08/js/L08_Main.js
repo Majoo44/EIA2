@@ -67,11 +67,12 @@ var L08Canvas;
         antikoerperposition.forEach(function (item) {
             antikoerper(item.x, item.y);
         });
-        partikel({ x: 0, y: 0 }, { x: 2000, y: window.innerHeight });
+        partikel({ x: 0, y: 0 }, { x: 2500, y: 4000 });
         return;
         canvas = document.getElementsByTagName("canvas")[0];
         for (let i = 0; i < 7; i++) {
-            let x = Math.random() * canvas.width;
+            let x = Math.random()
+                * canvas.width;
             let y = Math.random() * canvas.height;
             koerperzelle(x, y);
             // tslint:disable-next-line: align
@@ -151,8 +152,8 @@ var L08Canvas;
      } */
     function partikel(_position, _size) {
         console.log("Cloud", _position, _size);
-        let nPartikel = 2500;
-        let radiusPartikel = 40;
+        let nPartikel = 2000;
+        let radiusPartikel = 35;
         let partikels = new Path2D();
         let gradient = crc2.createRadialGradient(0, 0, 0, 0, 0, radiusPartikel);
         partikels.arc(0, 0, radiusPartikel, 0, 2 * Math.PI);

@@ -92,7 +92,7 @@ namespace L08Canvas {
         });
 
 
-        partikel({x: 0, y: 0}, {x: 2000, y: window.innerHeight});
+        partikel({x: 0, y: 0}, {x: 2500, y: 4000});
 
 
         return;
@@ -189,8 +189,8 @@ namespace L08Canvas {
 
     function partikel(_position: Point, _size: Point): void {
         console.log("Cloud", _position, _size);
-        let nPartikel: number = 2500;
-        let radiusPartikel: number = 40;
+        let nPartikel: number = 2000;
+        let radiusPartikel: number = 35;
         let partikels: Path2D = new Path2D();
         let gradient: CanvasGradient = crc2.createRadialGradient(0, 0, 0, 0, 0, radiusPartikel);
 
