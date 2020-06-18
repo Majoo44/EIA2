@@ -1,11 +1,11 @@
 /*
-Aufgabe: Aufgabe 8
+Aufgabe: Aufgabe 9
 Name: Mario Eigeldinger
 Matrikel: 261167
-Datum: 13.06.2020
+Datum: 20.06.2020
 Hiermit versichere ich, dass ich diesen Code selbst mit Johannes & Sebastian zusammen geschrieben habe...
 */
-namespace L08Canvas {
+namespace L09Classes {
     interface Rectangle {
         x: number;
         y: number;
@@ -16,6 +16,23 @@ namespace L08Canvas {
         x: number;
         y: number;
     }
+
+    /* class Vector {
+        x: number;
+        y: number;
+    
+        scale(_factor: number): void {
+            this.x *= _factor;
+            this.y *= _factor;
+        }
+    
+        add(_addend: Vector): void {
+            this.x += _addend.x;
+            this.y += _addend.y;
+        }
+    } */
+
+
 
     function generateRandomCluster(_area: Rectangle, _count: number): Point[] {
         let returnValue: Point[] = new Array();
