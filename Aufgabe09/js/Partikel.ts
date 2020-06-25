@@ -3,7 +3,7 @@ Aufgabe: Aufgabe 9
 Name: Mario Eigeldinger
 Matrikel: 261167
 Datum: 20.06.2020
-Hiermit versichere ich, dass ich diesen Code zum Teil selbst, zum Teil inspiriert durch Kommilitonen (Hier von Dominik Wieck) auf der Pages Seite geschrieben habe... 
+Hiermit versichere ich, dass ich diesen Code zum Teil selbst, zum Teil inspiriert durch Kommilitonen auf der Pages Seite geschrieben habe... 
 Durch diese Hilfe konnte ich einige Dinge verstehen.
 */
 namespace L09Classes {
