@@ -5,14 +5,21 @@ Matrikel: 261167
 Datum: 27.06.2020
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe...
 */
-body, html {
-    margin: 0em;
-    width: 100%;
-    height: 100%;
-    }
-
 pattern {
    opacity:0.7;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#mainCanvas {
+    width: 100%;
+    height: 100%;
+    margin: 0;
 }
 
 /*#canvas {
