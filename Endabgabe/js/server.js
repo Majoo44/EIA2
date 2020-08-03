@@ -6,7 +6,6 @@ var EIA2_Endabgabe;
 (function (EIA2_Endabgabe) {
     let options;
     let mongoClient;
-    let orders;
     let port = process.env.PORT;
     if (port == undefined) {
         port = 5001;
@@ -75,8 +74,8 @@ var EIA2_Endabgabe;
             }
             else if (action == "savePicture") {
                 //save new Picture in new Collection 
-                let newCollection = mongoClient.db("pictures").createCollection("drawings");
-                (await newCollection).insertOne(data);
+                let collection = mongoClient.db("pictures").collection("drawings");
+                collection.insertOne(data);
                 _response.write("Ist angekommen");
             }
             else {

@@ -5,7 +5,6 @@ export namespace EIA2_Endabgabe {
 
     let options: Mongo.MongoClientOptions;
     let mongoClient: Mongo.MongoClient;
-    let orders: Mongo.Collection;
     let port: number | string | undefined = process.env.PORT;
     if (port == undefined) {
         port = 5001;  
@@ -86,8 +85,8 @@ export namespace EIA2_Endabgabe {
             }
             else if (action == "savePicture") {
                 //save new Picture in new Collection 
-                let newCollection: Promise<Mongo.Collection<any>> = mongoClient.db("pictures").createCollection("drawings");
-                (await newCollection).insertOne(data);
+                let collection: Mongo.Collection<any> = mongoClient.db("pictures").collection("drawings");
+                collection.insertOne(data);
                 _response.write("Ist angekommen");
             }
             else {
