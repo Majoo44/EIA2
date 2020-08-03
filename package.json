@@ -8,11 +8,11 @@
 		"start": "node Endabgabe/js/server.js"
 	},
 	"engines": {
-		"node": ">= 7.6.0"
+		"node": "7.6.0"
 	},
 	"dependencies": {
+		"@types/mongodb": "^3.5.25",
 		"ejs": "2.4.1",
-		"@types/mongodb": "^3.5.20",
-		"mongodb": "^3.5.8"
+		"mongodb": "^3.6.0"
 	}
 }
