@@ -4,7 +4,6 @@ const Http = require("http");
 const Mongo = require("mongodb");
 var EIA2_Endabgabe;
 (function (EIA2_Endabgabe) {
-    let allOrders = [];
     let options;
     let mongoClient;
     let orders;

@@ -1,6 +1,6 @@
 namespace EIA2_Endabgabe {
-    let url: string = "http://localhost:5001/";
-    // let url: string = "https://knobelkind.herokuapp.com/";
+    //let url: string = "http://localhost:5001/";
+    let url: string = "https://knobelkind.herokuapp.com/";
     let options: string[];
 
     export interface PicturePart {

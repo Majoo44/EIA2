@@ -1,10 +1,8 @@
 import * as Http from "http";
-import * as Url from "url";
 import * as Mongo from "mongodb";
 
 export namespace EIA2_Endabgabe {
 
-    let allOrders: string[] = [];
     let options: Mongo.MongoClientOptions;
     let mongoClient: Mongo.MongoClient;
     let orders: Mongo.Collection;
