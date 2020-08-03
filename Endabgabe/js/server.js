@@ -24,10 +24,7 @@ var EIA2_Endabgabe;
     function connectToDatabase(_url) {
         options = { useNewUrlParser: true, useUnifiedTopology: true };
         mongoClient = new Mongo.MongoClient(_url, options);
-        mongoClient.connect().then(() => {
-            orders = mongoClient.db("pictures").collection("drawings");
-            console.log("Database connection ", orders != undefined);
-        });
+        mongoClient.connect();
     }
     async function handleRequest(_request, _response) {
         console.log("What's up?");

@@ -28,10 +28,7 @@ export namespace EIA2_Endabgabe {
     function connectToDatabase(_url: string): void {
         options = { useNewUrlParser: true, useUnifiedTopology: true };
         mongoClient = new Mongo.MongoClient(_url, options);
-        mongoClient.connect().then(() => {
-            orders = mongoClient.db("pictures").collection("drawings");
-            console.log("Database connection ", orders != undefined);
-        });
+        mongoClient.connect();
     }
 
     async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<any> {
