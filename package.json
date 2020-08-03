@@ -3,9 +3,9 @@
 	"version": "0.0.0",
 	"description": "",
 	"author": "Mario Eigeldinger",
-	"main": "L06_Server_Main.js",
+	"main": "server.js",
 	"scripts": {
-		"start": "node Aufgabe06/js/L06_Server.js"
+		"start": "node Endabgabe/js/server.js"
 	},
 	"engines": {
 		"node": "6.11.1"

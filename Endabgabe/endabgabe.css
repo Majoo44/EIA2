@@ -1,0 +1,232 @@
+    body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: black;
+	display: grid;
+    grid-template-areas: 
+    'zauberbild zauberbild zauberbild canvas canvas'
+    'width height canvasColorWrap canvas canvas'
+    'form forms formChanges canvas canvas'
+    'form forms formChanges canvas canvas'
+    'list forms formChanges canvas canvas';
+    grid-template-rows: minmax(0,60);
+    text-transform: uppercase;
+}
+
+canvas {
+    grid-area: canvas;
+    margin-right: 10px;
+}
+
+p, h4, h5{
+    color: white;
+    text-align: justify;
+    padding-left: 10px;
+    margin: 0px;
+}
+h5 {
+    font-size: 12px;
+}
+button {
+    width: 50px; 
+    height: 50px; 
+    margin: 10px;
+    border: none; 
+    color: white; 
+}
+
+input {
+    height: 50px; 
+    margin: 10px; 
+    width: 100px;
+    border: none; 
+    color: white;
+    border-radius: 5px; 
+    background: #005983;
+}
+
+input::placeholder {
+    opacity: 1;
+    color: white; 
+}
+
+#circle {
+    grid-area: btn1;
+    color: white;
+    margin: 15px 0px 15px 0px;
+}
+
+#square {
+    grid-area: btn2;
+    color: white;
+    margin: 15px 0px 15px 0px;
+}
+
+#triangle {
+    grid-area: btn3;
+    color: white;
+    margin: 15px 0px 15px 0px;
+}
+
+#star {
+    grid-area: btn4;
+    color: white; 
+    margin: 15px 0px 15px 0px;
+}
+
+#circle, #triangle, #square, #star, #save, #load {
+    border-radius: 5px;
+    background: #005983;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+#rotate, #move, #sizeChange, #trash, #figureX, #figureY, #scaleValue {
+    width: 100px;
+    border-radius: 5px;
+    background: #005983;
+    color: white;
+    text-transform: uppercase;
+    margin-top: 10px;
+    justify-content: right;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+#trash {
+    grid-area: delete;
+}
+
+#scaleValue {
+    margin-left: 10px; 
+    width: 90px;
+    padding-left: 10px;
+    font-size: 11px;
+}
+
+#allForms {
+    grid-area: list;
+    width: 200px;
+}
+
+#canvasWidth {
+    display: none;
+    grid-area: width;
+    width: 188px;
+    margin-left: 0px;
+    padding-left: 10px;
+    align-self: center;
+    font-size: 13px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: -0.008em;
+}
+
+#canvasHeight {
+    display: none;
+    grid-area: height;
+    width: 188px;
+    margin-left: 0px;
+    padding-left: 10px;
+    align-self: center;
+    font-size: 13px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+#canvasColorWrap{
+    grid-area: canvasColorWrap;
+    align-self: center;
+}
+
+#canvasColor{
+    width:200px;
+    height:50px;
+    margin-left: 0px;
+}
+#formColor {
+    width:200px;
+    height:50px;
+    margin-left: 0px;
+    text-align: center;
+}
+#zauberbild {
+    grid-area: zauberbild;
+    width: 400px;
+}
+
+#forms {
+    grid-area: forms;
+    display: grid;
+    grid-template-areas: 
+    'btn1'
+    'btn2'
+    'btn3'
+    'btn4';
+    align-self: center;
+    justify-content: center;
+}
+
+#formChanges {
+    grid-area: formChanges;
+    display: grid;
+    grid-template-areas: 
+    'button1'
+    'button3'
+    'scalevalue'
+    'delete';
+    margin-left: 20px;
+    ;
+}
+
+form {
+    grid-area: form; 
+    display: grid; 
+    grid-template-areas: 
+    '1' 
+    '2'
+    '3';
+}
+
+#save  {
+    height: 55px; 
+    width: 200px;
+    grid-area: 1;
+    margin-left: 0px;
+    padding-left: 10px;
+    text-align: center;
+}
+
+#load {
+    height: 53px; 
+    width: 188px;
+    grid-area: 2;
+    margin-left: 0px;
+    padding-left: 10px;
+    text-align: center;
+}
+
+#allForms * {
+    display: grid;
+    height: 15px; 
+    padding-left: 10px; 
+    padding-top: 10px; 
+    background: #005983;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+#allForms {
+    border-radius: 5px;
+    background: #005983;
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px;
+    width: 200px;
+}
+
+#allForms *:hover{
+    cursor: pointer;
+    color: black;
+    font-weight: bolder;
+}
