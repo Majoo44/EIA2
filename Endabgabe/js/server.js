@@ -21,12 +21,13 @@ var EIA2_Endabgabe;
         server.listen(_port);
         server.addListener("request", handleRequest);
     }
-    async function connectToDatabase(_url) {
+    function connectToDatabase(_url) {
         options = { useNewUrlParser: true, useUnifiedTopology: true };
         mongoClient = new Mongo.MongoClient(_url, options);
-        await mongoClient.connect();
-        orders = mongoClient.db("pictures").collection("drawings");
-        console.log("Database connection ", orders != undefined);
+        mongoClient.connect().then(() => {
+            orders = mongoClient.db("pictures").collection("drawings");
+            console.log("Database connection ", orders != undefined);
+        });
     }
     async function handleRequest(_request, _response) {
         console.log("What's up?");
