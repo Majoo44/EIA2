@@ -1,7 +1,7 @@
 namespace EIA2_Endabgabe {
     export class Star extends Form {
 
-        constructor(_info?: string[]) {
+        constructor(_info?: PicturePart) {
             if (_info)
                 super(_info);
             else
@@ -46,9 +46,9 @@ namespace EIA2_Endabgabe {
             super.changePosition(_x, _y);
         }
 
-        public changeRotation(_factor: number) {
-            super.changeRotation(_factor);
-        }
+        // public changeRotation(_factor: number) {
+        //     super.changeRotation(_factor);
+        // }
 
         public resize(_factor: number) {
             super.resize(_factor);

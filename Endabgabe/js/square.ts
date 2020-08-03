@@ -1,6 +1,6 @@
 namespace EIA2_Endabgabe {
     export class Square extends Form {
-        constructor(_info?: string[]) {
+        constructor(_info?: PicturePart) {
             if (_info)
             super(_info);
             else

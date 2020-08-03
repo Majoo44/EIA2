@@ -1,5 +1,6 @@
 namespace EIA2_Endabgabe {
-    let url: string = "https://knobelkind.herokuapp.com/";
+    let url: string = "http://localhost:5001/";
+    // let url: string = "https://knobelkind.herokuapp.com/";
     let options: string[];
 
     export interface PicturePart {
@@ -13,6 +14,17 @@ namespace EIA2_Endabgabe {
         type: string;
     }
 
+    export interface PictureInfo {
+        width: number;
+        height: number;
+        background: string;
+    }
+
+    export interface Picture {
+        name: string;
+        info: PictureInfo;
+        parts: PicturePart[];
+    }
 
     export function savePicture(_name: string): void {
         if (options) {
@@ -29,9 +41,8 @@ namespace EIA2_Endabgabe {
                 alert("This name is already taken! Please choose another one!");
                 return false;
             }
-        }
+        } 
         return true;
-
     }
 
     function insertPicture(_name: string): void {
@@ -47,33 +58,41 @@ namespace EIA2_Endabgabe {
                 "moveType": figure.moveType,
                 "color": figure.color,
                 "type": figure.type
-            }
+            };
             information.push(form);
         }
         sendData(information, _name);
     }
 
     export async function findPictures(): Promise<void> {
-        let response: Response = await fetch(url + "?" + "getPicture=yes");
+        console.log("findPictures");
+        let response: Response = await fetch(url + "?" + "action=getAllPictures");
         let responseText: string = await response.text();
-        let pretty: string = responseText.replace(/\\|\[|{|}|"|_id|insertName|]/g, "");
-        let prettier: string = pretty.replace(/,,,/g, ",");
-        createDatalist(prettier);
+        let data: Picture[] = JSON.parse(responseText);
+        createDatalist(data);
     }
 
     async function sendData(_information: PicturePart[], _name: string): Promise<void> {
-        let name: string = _name.replace(" ", "_");
-        let canvasInfo: string[] = [];
-        let width: string = (Math.floor(canvas.width)).toString();
-        let height: string = (Math.floor(canvas.height)).toString();
-        canvasInfo.push(width, height, background);
-        let canvasLook: string = JSON.stringify(canvasInfo);
-        let canvasQuery: URLSearchParams = new URLSearchParams(canvasLook);
+        console.log("sendData");
 
-        let info: string = JSON.stringify(_information);
-        let query: URLSearchParams = new URLSearchParams(info);
-        let response: Response = await fetch(url + "?savePicture&" + name + "&" + canvasQuery.toString() + "&" + query.toString());
-        await fetch(url + "?insertName&" + name);
+        let name: string = _name.replace(" ", "_");
+
+        let width: number = Math.floor(canvas.width);
+        let height: number = Math.floor(canvas.height);
+
+        let data: Picture = {
+            name: name,
+            info: {
+                background: background,
+                width: width,
+                height: height
+            },
+            parts: _information
+        };
+
+        let query: string = encodeURIComponent(JSON.stringify(data));
+
+        let response: Response = await fetch(url + "?action=savePicture&data=" + query);
 
         let responseText: string = await response.text();
         if (responseText != "") {
@@ -85,72 +104,72 @@ namespace EIA2_Endabgabe {
         findPictures();
     }
 
-    function createDatalist(_response: string): void {
-        let masterpiece: HTMLDataListElement = <HTMLDataListElement>document.getElementById("masterpiece");
-        options = _response.split(",");
-        while (masterpiece.firstChild) {
-            masterpiece.removeChild(masterpiece.firstChild);
+    function createDatalist(elements: Picture[]): void {
+        console.log("createDatalist");
+        let drawings: HTMLDataListElement = <HTMLDataListElement>document.getElementById("drawings");
+        
+ 
+        if (drawings != null) {
+                while (drawings.firstChild) {
+                    drawings.removeChild(drawings.firstChild);
+            }
         }
 
-        for (let entry of options) {
-            if (entry == "") {
-                //Skip this
-            }
-            else {
+        for (let i: number = 0; i < elements.length; i++) {
+            let entry: Picture = elements[i];
+            if (entry.name != "") {
                 let option: HTMLOptionElement = document.createElement("option");
-                option.setAttribute("name", entry);
-                option.value = entry;
-                masterpiece.appendChild(option);
+                option.setAttribute("name", entry.name);
+                option.value = entry.name;
+                drawings.appendChild(option);
             }
         }
     }
 
-    export async function loadPicture(name: string): Promise<void> {
+    export async function loadPicture(): Promise<void> {
         figures = [];
-        // let name: string = creations.value;
-        let response: Response = await fetch(url + "?" + "findPicture&" + name);
+        let name: string = (<HTMLInputElement>document.getElementById("load")).value;
+        name = encodeURIComponent( JSON.stringify(name));
+        let response: Response = await fetch(url + "?" + "action=getPicture&name=" + name);
         let responseText: string = await response.text();
-        let pretty: string = responseText.replace(/\\|\[|{|}|"|_id|savePicture|]/g, "");
-        let removeName: string = pretty.replace(name, "");
-        let prettier: string = removeName.replace(/,,,/g, ",");
-        let removeKey: string = prettier.replace(/type:|active:|size:|positionX:|positionY:|rotation:|x:|y:|moveType:|color:/g, "");
-        let data: string[] = removeKey.split(",");
+        
+        let data: Picture = JSON.parse(responseText);
+
         console.log(data);
-        canvas.width = parseInt(data[1]);
-        canvas.height = parseInt(data[2]);
-        createBackground(data[3]);
-        data.splice(0, 4);
-        console.log(data);
-        console.log(data);
+        canvas.width = data.info.width; 
+        canvas.height = data.info.height;
+        createBackground(data.info.background);
+      
         let info: string[] = [];
-        for (let i: number = 0; i < data.length; i++) {
-            switch (data[i]) {
+        for (let i: number = 0; i < data.parts.length; i++) {
+            let picturePart: PicturePart = data.parts[i];
+            switch (picturePart.type) {
                 case ("Triangle"):
-                    let triangle: Triangle = new Triangle(info);
+                    let triangle: Triangle = new Triangle(picturePart);
                     triangle.draw();
                     info = [];
                     figures.push(triangle);
                     break;
                 case ("Circle"):
-                    let circle: Circle = new Circle(info);
+                    let circle: Circle = new Circle(picturePart);
                     circle.draw();
                     info = [];
                     figures.push(circle);
                     break;
                 case ("Square"):
-                    let square: Square = new Square(info);
+                    let square: Square = new Square(picturePart);
                     square.draw();
                     info = [];
                     figures.push(square);
                     break;
                 case ("Star"):
-                    let star: Star = new Star(info);
+                    let star: Star = new Star(picturePart);
                     star.draw();
                     info = [];
                     figures.push(star);
                     break;
                 default:
-                    info.push(data[i]);
+                    // info.push(data[i]);
                     break;
             }
         }

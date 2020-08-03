@@ -43,9 +43,9 @@ var EIA2_Endabgabe;
         changePosition(_x, _y) {
             super.changePosition(_x, _y);
         }
-        changeRotation(_factor) {
-            super.changeRotation(_factor);
-        }
+        // public changeRotation(_factor: number) {
+        //     super.changeRotation(_factor);
+        // }
         resize(_factor) {
             super.resize(_factor);
         }

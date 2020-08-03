@@ -11,20 +11,23 @@ var EIA2_Endabgabe;
             this.velocity = new EIA2_Endabgabe.Vector(25, 25);
             console.log(_info);
             if (_info) {
-                if (_info[0] == "true") {
+                if (_info.active) {
                     this.active = true;
                     console.log("This is true");
                 }
-                else
+                else {
                     this.active = false;
-                this.size = new EIA2_Endabgabe.Vector(parseInt(_info[1]), parseInt(_info[2]));
-                this.position = new EIA2_Endabgabe.Vector(parseInt(_info[3]), parseInt(_info[4]));
+                }
+                this.size = new EIA2_Endabgabe.Vector(_info.size.x, _info.size.y);
+                this.position = new EIA2_Endabgabe.Vector(_info.positionX, _info.positionY);
                 console.log(this.position);
-                if (_info[6] == "move")
+                if (_info.moveType == "move") {
                     this.moveType = FORM_MOVE.MOVE;
-                else
+                }
+                else {
                     this.moveType = FORM_MOVE.ROTATE;
-                this.color = _info[7];
+                }
+                this.color = _info.color;
             }
             else {
                 this.color = "#ffffff";

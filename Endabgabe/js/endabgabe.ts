@@ -46,6 +46,7 @@ namespace EIA2_Endabgabe {
 
         load = <HTMLInputElement>document.getElementById("load");
         load.addEventListener("change", loadPicture);
+
         formChanges = <HTMLDivElement>document.getElementById("formChanges");
         formChanges.addEventListener("click", setAnimation);
 
@@ -110,19 +111,7 @@ namespace EIA2_Endabgabe {
     }
 
     export function updateList(): void {
-        while (allForms.firstChild) {
-            allForms.removeChild(allForms.firstChild);
-        }
-        let title: HTMLSpanElement = document.createElement("span");
-        title.innerText = "All Forms are listed here!";
-        allForms.appendChild(title);
-        for (let entry of figures) {
-            let list: HTMLSpanElement = document.createElement("span");
-            list.setAttribute("id", figures.indexOf(entry).toString());
-            list.innerText = entry.type + "  color: " + entry.color;
-            list.addEventListener("click", setActive);
-            allForms.appendChild(list);
-        }
+        console.log("updateList");
     }
 
     function animate(): void {

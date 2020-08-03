@@ -11,7 +11,7 @@ var EIA2_Endabgabe;
         }
         draw() {
             EIA2_Endabgabe.crc2.beginPath();
-            EIA2_Endabgabe.crc2.save(); 
+            EIA2_Endabgabe.crc2.save();
             EIA2_Endabgabe.crc2.translate(this.position.x, this.position.y);
             EIA2_Endabgabe.crc2.arc(0, 0, this.size.x, 0, 2 * Math.PI);
             if (this.active == true) {

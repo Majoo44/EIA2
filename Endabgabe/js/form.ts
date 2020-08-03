@@ -13,24 +13,28 @@ namespace EIA2_Endabgabe {
         public velocity: Vector = new Vector(25, 25);
         public type: string;
 
-        public constructor(_info?: string[]) {
+        public constructor(_info?: PicturePart) {
             console.log(_info);
             if (_info) {
-                if (_info[0] == "true") {
+                if (_info.active) {
                     this.active = true;
                     console.log("This is true");
                 }
-                else
-                this.active = false;
-                this.size = new Vector(parseInt(_info[1]), parseInt(_info[2]));
-                this.position = new Vector(parseInt(_info[3]), parseInt(_info[4]));
-                console.log(this.position);
-                if (_info[6] == "move")
-                    this.moveType = FORM_MOVE.MOVE;
-                else
-                    this.moveType = FORM_MOVE.ROTATE;
-                this.color = _info[7];
+                else {
+                    this.active = false;
                 }
+                this.size = new Vector(_info.size.x, _info.size.y);
+                this.position = new Vector(_info.positionX, _info.positionY);
+                console.log(this.position);
+                if (_info.moveType == "move"){
+                    this.moveType = FORM_MOVE.MOVE;
+                }
+                else {
+                    this.moveType = FORM_MOVE.ROTATE;
+                }
+
+                this.color = _info.color;
+            }
             else {
                 this.color = "#ffffff";
                 this.size = new Vector(60, 40);

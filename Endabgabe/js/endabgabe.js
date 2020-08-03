@@ -88,19 +88,7 @@ var EIA2_Endabgabe;
         playmusic();
     }
     function updateList() {
-        while (allForms.firstChild) {
-            allForms.removeChild(allForms.firstChild);
-        }
-        let title = document.createElement("span");
-        title.innerText = "All Forms are listed here!";
-        allForms.appendChild(title);
-        for (let entry of EIA2_Endabgabe.figures) {
-            let list = document.createElement("span");
-            list.setAttribute("id", EIA2_Endabgabe.figures.indexOf(entry).toString());
-            list.innerText = entry.type + "  color: " + entry.color;
-            list.addEventListener("click", setActive);
-            allForms.appendChild(list);
-        }
+        console.log("updateList");
     }
     EIA2_Endabgabe.updateList = updateList;
     function animate() {

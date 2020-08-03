@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const Http = require("http");
-const Url = require("url");
 const Mongo = require("mongodb");
 var EIA2_Endabgabe;
 (function (EIA2_Endabgabe) {
@@ -34,38 +33,53 @@ var EIA2_Endabgabe;
         console.log("What's up?");
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
-        console.log("Request-URL:  " + _request.url);
+        console.log("Request-URL: " + _request.url);
         if (_request.url) {
-            let url = Url.parse(_request.url, true);
-            let splitURL = _request.url.split("&");
-            console.log("SPLIT URL" + splitURL[0]);
-            if (_request.url == "/?getPicture=yes") {
+            let query = _request.url.split("?")[1];
+            let parameterPairs = query.split("&");
+            let action = parameterPairs[0].split("=")[1];
+            let data;
+            if (parameterPairs.length >= 2) {
+                let encodedString = parameterPairs[1].split("=")[1];
+                var jsonString = decodeURIComponent(encodedString);
+                data = JSON.parse(jsonString);
+            }
+            if (action == "getAllPictures") {
                 // Load Names of all pictures and show them to user 
-                let pictures = mongoClient.db("pictures").collection("Overview");
+                let pictures = mongoClient.db("pictures").collection("drawings");
                 let cursor = await pictures.find();
-                await cursor.forEach(showOrders);
-                let jsonString = JSON.stringify(allOrders);
+                let data = [];
+                await cursor.forEach((a) => {
+                    data.push(a);
+                });
+                let jsonString = JSON.stringify(data);
                 _response.write(jsonString);
-                allOrders = [];
             }
-            else if (splitURL[0] == "/?findPicture") {
+            else if (action == "getPicture") {
                 //Load specific Picture and show it to User
-                let picture = mongoClient.db("pictures").collection(splitURL[1]);
+                let picture = mongoClient.db("pictures").collection("drawings");
                 let cursor = await picture.find();
-                await cursor.forEach(showOrders);
-                let jsonString = JSON.stringify(allOrders);
-                let answer = jsonString.toString();
-                _response.write(answer);
-                allOrders = [];
+                let result = [];
+                await cursor.forEach((a) => {
+                    if (a.name == data) {
+                        result.push(a);
+                    }
+                });
+                if (result.length > 0) {
+                    let jsonString = JSON.stringify(result[0]);
+                    let answer = jsonString.toString();
+                    _response.write(answer);
+                }
+                else {
+                    let jsonString = JSON.stringify(result);
+                    let answer = jsonString.toString();
+                    _response.write(answer);
+                }
             }
-            else if (splitURL[0] == "/?insertName") {
-                let pictures = mongoClient.db("pictures").collection("Overview");
-                (await pictures).insertOne(url.query);
-            }
-            else if (splitURL[0] == "/?savePicture") {
+            else if (action == "savePicture") {
                 //save new Picture in new Collection 
-                let newCollection = mongoClient.db("pictures").createCollection(splitURL[1]);
-                (await newCollection).insertOne(url.query);
+                let newCollection = mongoClient.db("pictures").createCollection("drawings");
+                (await newCollection).insertOne(data);
                 _response.write("Ist angekommen");
             }
             else {
@@ -73,11 +87,6 @@ var EIA2_Endabgabe;
             }
         }
         _response.end();
-    }
-    function showOrders(_item) {
-        for (let key in _item) {
-            allOrders.push(key);
-        }
     }
 })(EIA2_Endabgabe = exports.EIA2_Endabgabe || (exports.EIA2_Endabgabe = {}));
 //# sourceMappingURL=server.js.map
