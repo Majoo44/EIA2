@@ -16,7 +16,7 @@ var EIA2_Endabgabe;
     function checkNames(_name) {
         for (let i = 0; i < options.length; i++) {
             if (options[i] == _name) {
-                alert("This name is already taken! Please choose another one!");
+                alert("Name ist not available! Use another :)");
                 return false;
             }
         }
@@ -66,7 +66,7 @@ var EIA2_Endabgabe;
         let response = await fetch(url + "?action=savePicture&data=" + query);
         let responseText = await response.text();
         if (responseText != "") {
-            alert("Your picture " + _name + " has been saved!");
+            alert("Your drawing " + _name + " is saved!");
         }
         else {
             alert("An error has occurred during saving");

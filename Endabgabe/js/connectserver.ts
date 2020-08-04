@@ -38,7 +38,7 @@ namespace EIA2_Endabgabe {
     function checkNames(_name: string): boolean {
         for (let i: number = 0; i < options.length; i++) {
             if (options[i] == _name) {
-                alert("This name is already taken! Please choose another one!");
+                alert("Name ist not available! Use another :)");
                 return false;
             }
         } 
@@ -96,7 +96,7 @@ namespace EIA2_Endabgabe {
 
         let responseText: string = await response.text();
         if (responseText != "") {
-            alert("Your picture " + _name + " has been saved!");
+            alert("Your drawing " + _name + " is saved!");
         }
         else {
             alert("An error has occurred during saving");

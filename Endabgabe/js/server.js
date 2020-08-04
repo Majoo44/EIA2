@@ -40,7 +40,6 @@ var EIA2_Endabgabe;
                 data = JSON.parse(jsonString);
             }
             if (action == "getAllPictures") {
-                // Load Names of all pictures and show them to user 
                 let pictures = mongoClient.db("pictures").collection("drawings");
                 let cursor = await pictures.find();
                 let data = [];
@@ -51,7 +50,6 @@ var EIA2_Endabgabe;
                 _response.write(jsonString);
             }
             else if (action == "getPicture") {
-                //Load specific Picture and show it to User
                 let picture = mongoClient.db("pictures").collection("drawings");
                 let cursor = await picture.find();
                 let result = [];
@@ -72,10 +70,9 @@ var EIA2_Endabgabe;
                 }
             }
             else if (action == "savePicture") {
-                //save new Picture in new Collection 
                 let collection = mongoClient.db("pictures").collection("drawings");
                 collection.insertOne(data);
-                _response.write("Ist angekommen");
+                _response.write("Hier ist das Bild");
             }
             else {
                 _response.write("Error");

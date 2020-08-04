@@ -49,7 +49,6 @@ export namespace EIA2_Endabgabe {
             }
 
             if (action == "getAllPictures") {
-                // Load Names of all pictures and show them to user 
                 let pictures: any = mongoClient.db("pictures").collection("drawings");
                 let cursor: Mongo.Cursor<any> = await pictures.find();
                 let data: any = [];
@@ -60,7 +59,6 @@ export namespace EIA2_Endabgabe {
                 _response.write(jsonString);
             }
             else if (action == "getPicture") {
-                //Load specific Picture and show it to User
                 let picture: any = mongoClient.db("pictures").collection("drawings");
                 let cursor: Mongo.Cursor<any> = await picture.find();
                 
@@ -82,10 +80,9 @@ export namespace EIA2_Endabgabe {
                 }
             }
             else if (action == "savePicture") {
-                //save new Picture in new Collection 
                 let collection: Mongo.Collection<any> = mongoClient.db("pictures").collection("drawings");
                 collection.insertOne(data);
-                _response.write("Ist angekommen");
+                _response.write("Hier ist das Bild");
             }
             else {
                 _response.write("Error");
