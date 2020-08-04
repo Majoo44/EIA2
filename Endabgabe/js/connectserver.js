@@ -1,8 +1,8 @@
 "use strict";
 var EIA2_Endabgabe;
 (function (EIA2_Endabgabe) {
-    //let url: string = "http://localhost:5001/";
     let url = "https://knobelkind.herokuapp.com/";
+    //let url: string = "http://localhost:5001/";
     let options;
     function savePicture(_name) {
         if (options) {

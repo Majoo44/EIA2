@@ -147,7 +147,6 @@ namespace EIA2_Endabgabe {
     }
 
     export function createBackground(_color?: string): void {
-        
         if (_color) {
             background = _color;
         }
