@@ -44,10 +44,6 @@ namespace EIA2_Endabgabe {
             super.changePosition(_x, _y);
         }
 
-        // public changeRotation(_factor: number) {
-        //     super.changeRotation(_factor);
-        // }
-
         public resize(_factor: number) {
             super.resize(_factor);
         }

@@ -23,13 +23,13 @@ var EIA2_Endabgabe;
             }
             if (this.active == true) {
                 EIA2_Endabgabe.crc2.strokeStyle = "black";
+                EIA2_Endabgabe.crc2.lineWidth = 7;
                 EIA2_Endabgabe.crc2.fill();
                 EIA2_Endabgabe.crc2.stroke();
             }
             else {
                 EIA2_Endabgabe.crc2.strokeStyle = this.color;
                 EIA2_Endabgabe.crc2.fillStyle = this.color;
-                EIA2_Endabgabe.crc2.lineWidth = 7;
                 EIA2_Endabgabe.crc2.fill();
             }
             EIA2_Endabgabe.crc2.fillStyle = this.color;
@@ -43,9 +43,6 @@ var EIA2_Endabgabe;
         changePosition(_x, _y) {
             super.changePosition(_x, _y);
         }
-        // public changeRotation(_factor: number) {
-        //     super.changeRotation(_factor);
-        // }
         resize(_factor) {
             super.resize(_factor);
         }

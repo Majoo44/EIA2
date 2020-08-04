@@ -23,13 +23,14 @@ namespace EIA2_Endabgabe {
             }
             if (this.active == true) {
                 crc2.strokeStyle = "black";
+                crc2.lineWidth = 7;
+
                 crc2.fill();
                 crc2.stroke();
             }
             else {
                 crc2.strokeStyle = this.color;
                 crc2.fillStyle = this.color;
-                crc2.lineWidth = 7;
                 crc2.fill();
             }
             crc2.fillStyle = this.color;
@@ -45,10 +46,6 @@ namespace EIA2_Endabgabe {
         public changePosition(_x: number, _y: number) {
             super.changePosition(_x, _y);
         }
-
-        // public changeRotation(_factor: number) {
-        //     super.changeRotation(_factor);
-        // }
 
         public resize(_factor: number) {
             super.resize(_factor);
