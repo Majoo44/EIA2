@@ -26,7 +26,6 @@ var EIA2_Endabgabe;
         mongoClient.connect();
     }
     async function handleRequest(_request, _response) {
-        console.log("What's up?");
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
         console.log("Request-URL: " + _request.url);
