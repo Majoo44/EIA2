@@ -243,3 +243,8 @@ namespace EIA2_Endabgabe {
         figures[num].active = true;
     }
 }
+// Aufgabe: Endabgabe
+//Name: Mario Eigeldinger
+//Matrikel: 261167
+//Datum: 04.08.2020
+//Wichtige Info: Der Typescript Code basiert auf dem der Endabgabe von Alida Kohler aus dem aktuellen Kurs. Durch die "Inspirierung" konnte ich einige Dinge verstehen, hinzufügen, entfernen, anders implementieren sowie die Endabgabe final abgeben.
